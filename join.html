@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="卂𝔪 Ṽ̶เק Community — Join the official platform and stay connected with community updates, announcements, and easy access features." />
+  <title> 卂𝔪 Ṽ̶เק Community · green glass</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1703008150992908');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1703008150992908&ev=PageView&noscript=1"
+  /></noscript>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            primary: '#a3e635',
+            'primary-dark': '#0f1a04',
+            accent: '#2dd4bf',
+            gold: '#f59e0b',
+            magenta: '#ec4899',
+            coral: '#f97316',
+          },
+          animation: {
+            'glow-pulse': 'glowPulse 4s ease-in-out infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'orb1': 'orb1 20s ease-in-out infinite',
+            'orb2': 'orb2 15s ease-in-out infinite',
+            'orb3': 'orb3 25s ease-in-out infinite',
+            'bounce-arrow': 'bounceArrow 2s ease-in-out infinite',
+            'shimmer': 'shimmer 2s linear infinite',
+            'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            'logo-rock': 'logoRock 6s ease-in-out infinite',
+          },
+          keyframes: {
+            glowPulse: {
+              '0%, 100%': { boxShadow: '0 0 20px rgba(163,230,53,0.25), 0 0 40px rgba(163,230,53,0.1)' },
+              '50%': { boxShadow: '0 0 40px rgba(163,230,53,0.5), 0 0 80px rgba(163,230,53,0.2)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' },
+            },
+            orb1: {
+              '0%, 100%': { transform: 'translate(0,0) scale(1)' },
+              '33%': { transform: 'translate(50px,30px) scale(1.2)' },
+              '66%': { transform: 'translate(-20px,50px) scale(0.9)' },
+            },
+            orb2: {
+              '0%, 100%': { transform: 'translate(0,0) scale(1)' },
+              '50%': { transform: 'translate(-30px,40px) scale(1.1)' },
+            },
+            orb3: {
+              '0%, 100%': { transform: 'translate(0,0) scale(1)' },
+              '40%': { transform: 'translate(20px,-20px) scale(1.05)' },
+            },
+            bounceArrow: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(10px)' },
+            },
+            shimmer: {
+              '0%': { transform: 'translateX(-100%)' },
+              '100%': { transform: 'translateX(300%)' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            logoRock: {
+              '0%, 100%': { transform: 'rotate(0deg)' },
+              '20%': { transform: 'rotate(5deg)' },
+              '60%': { transform: 'rotate(-5deg)' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0c10;
+      color: #f2f2f2;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* ─── Glassmorphism ─── */
+    .glass {
+      background: rgba(14,18,28, 0.65);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .glass-card {
+      background: rgba(14,18,28, 0.45);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+    }
+
+    /* ─── Green Glass (organic) ─── */
+    .glass-green {
+      background: rgba(60, 160, 100, 0.12);
+      backdrop-filter: blur(16px) saturate(1.3);
+      -webkit-backdrop-filter: blur(16px) saturate(1.3);
+      border: 1px solid rgba(120, 210, 160, 0.20);
+      box-shadow: 0 8px 32px rgba(40, 100, 60, 0.08), inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+
+    /* ─── Gradient background ─── */
+    .page-bg {
+      background:
+        radial-gradient(ellipse 80% 60% at 10% 20%, rgba(163,230,53,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 90% 40%, rgba(45,212,191,0.05) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 60% at 50% 90%, rgba(236,72,153,0.04) 0%, transparent 60%),
+        #0a0c10;
+    }
+
+    /* ─── Animated gradient orbs ─── */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+    }
+    .orb-1 {
+      width: min(55vw, 600px);
+      height: min(55vw, 600px);
+      top: 5%;
+      left: -10%;
+      background: rgba(163,230,53,0.08);
+      animation: orb1 20s ease-in-out infinite;
+    }
+    .orb-2 {
+      width: min(45vw, 500px);
+      height: min(45vw, 500px);
+      top: 35%;
+      right: -10%;
+      background: rgba(45,212,191,0.07);
+      animation: orb2 15s ease-in-out infinite 2s;
+    }
+    .orb-3 {
+      width: min(65vw, 700px);
+      height: min(65vw, 700px);
+      bottom: -15%;
+      left: 15%;
+      background: rgba(236,72,153,0.05);
+      animation: orb3 25s ease-in-out infinite 5s;
+    }
+
+    /* ─── Particles ─── */
+    #particles-canvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.6;
+    }
+
+    /* ─── Logo ring ─── */
+    .logo-ring {
+      animation: glowPulse 4s ease-in-out infinite;
+      border-radius: 50%;
+      padding: 10px;
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .logo-img {
+      animation: logoRock 6s ease-in-out infinite;
+      height: 80px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* ─── Buttons ─── */
+    .btn-primary {
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+      border-radius: 9999px;
+      background: #a3e635;
+      color: #0f1a04;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1.0625rem;
+      letter-spacing: 0.04em;
+      padding: 1rem 2.25rem;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 22px rgba(163,230,53,0.45);
+    }
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(163,230,53,0.65);
+    }
+    .btn-primary:active { transform: scale(0.97); }
+    .btn-primary .shimmer-layer {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      transform: translateX(-100%);
+      transition: none;
+    }
+    .btn-primary:hover .shimmer-layer {
+      animation: shimmer 1.5s linear infinite;
+    }
+
+    .btn-outline {
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      border-radius: 9999px;
+      background: #2AABEE;
+      border: none;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1.0625rem;
+      letter-spacing: 0.04em;
+      padding: 1rem 2.25rem;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 22px rgba(42,171,238,0.45);
+    }
+    .btn-outline:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(42,171,238,0.65);
+    }
+    .btn-outline:active { transform: scale(0.97); }
+
+    /* ─── GREEN GLASS ORGANIC BUTTON ─── */
+    .btn-green-glass {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      border-radius: 9999px;
+      background: rgba(60, 180, 100, 0.20);
+      backdrop-filter: blur(12px) saturate(1.3);
+      -webkit-backdrop-filter: blur(12px) saturate(1.3);
+      border: 1px solid rgba(120, 220, 160, 0.30);
+      padding: 0.9rem 2.2rem;
+      color: #e8f5ec;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1.0625rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      box-shadow: 0 8px 24px rgba(40, 120, 70, 0.12), inset 0 1px 0 rgba(255,255,255,0.15);
+    }
+    .btn-green-glass:hover {
+      background: rgba(60, 200, 110, 0.30);
+      border-color: rgba(100, 220, 150, 0.50);
+      transform: scale(1.04) translateY(-2px);
+      box-shadow: 0 16px 40px rgba(40, 140, 70, 0.20), inset 0 1px 0 rgba(255,255,255,0.20);
+      color: #ffffff;
+    }
+    .btn-green-glass:active { transform: scale(0.96); }
+    .btn-green-glass i { font-size: 1.2rem; color: #8cd0a0; }
+
+    /* ─── Feature cards ─── */
+    .feature-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .feature-card:hover { transform: translateY(-8px); }
+    .feature-card .card-glow {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .feature-card:hover .card-glow { opacity: 1; }
+
+    .icon-ring {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      transition: box-shadow 0.3s;
+      flex-shrink: 0;
+    }
+
+    /* ─── Scroll reveal ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    .hero-fade {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .hero-fade.hero-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .footer-glow-line {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(163,230,53,0.5), transparent);
+    }
+
+    .trust-orb {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: min(80vw, 700px);
+      height: min(40vw, 350px);
+      border-radius: 50%;
+      background: rgba(163,230,53,0.04);
+      filter: blur(90px);
+      pointer-events: none;
+      animation: glowPulseOrb 8s ease-in-out infinite;
+    }
+    @keyframes glowPulseOrb {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 0.9; }
+    }
+
+    .community-card {
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .community-card:hover {
+      border-color: rgba(163,230,53,0.45) !important;
+      box-shadow: 0 0 30px rgba(163,230,53,0.12), 0 4px 24px rgba(0,0,0,0.25);
+    }
+
+    .icon { stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ─── LOADING OVERLAY (green glass) ─── */
+    .loading-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(180, 225, 200, 0.15);
+      backdrop-filter: blur(24px) saturate(1.4);
+      -webkit-backdrop-filter: blur(24px) saturate(1.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    .loading-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .loading-box-glass {
+      max-width: 420px;
+      width: 100%;
+      background: rgba(210, 245, 220, 0.15);
+      backdrop-filter: blur(20px) saturate(1.3);
+      -webkit-backdrop-filter: blur(20px) saturate(1.3);
+      border-radius: 40px;
+      padding: 2.8rem 2.2rem 2.2rem;
+      border: 1px solid rgba(130, 220, 170, 0.25);
+      box-shadow: 0 30px 70px rgba(40, 100, 60, 0.10), inset 0 1px 0 rgba(255,255,255,0.15);
+      text-align: center;
+      transform: scale(0.94) translateY(20px);
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease;
+      opacity: 0;
+    }
+    .loading-overlay.active .loading-box-glass {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+
+    .loading-spinner-green {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 1.8rem;
+      position: relative;
+    }
+    .loading-spinner-green::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 4px solid rgba(80, 200, 130, 0.12);
+      border-top-color: #4bb86a;
+      border-right-color: #6ad08a;
+      animation: spin 1.2s cubic-bezier(0.6, 0.2, 0.4, 0.8) infinite;
+    }
+    .loading-spinner-green .icon-center {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: #3daa5e;
+      animation: pulseIcon 1.8s ease-in-out infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes pulseIcon {
+      0%, 100% { opacity: 0.5; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.1); }
+    }
+
+    .loading-title-green {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #d4f0da;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .loading-title-green .highlight { color: #6ad08a; }
+
+    .loading-sub {
+      font-size: 0.85rem;
+      color: rgba(200, 235, 210, 0.7);
+      margin-bottom: 1.8rem;
+      font-weight: 400;
+    }
+
+    .progress-track-glass {
+      width: 100%;
+      height: 6px;
+      background: rgba(80, 200, 130, 0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 0.8rem;
+      border: 1px solid rgba(80, 200, 130, 0.06);
+    }
+    .progress-fill-glass {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #4bb86a, #7ad89a);
+      border-radius: 12px;
+      transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      box-shadow: 0 0 20px rgba(60, 200, 100, 0.20);
+    }
+
+    .progress-status {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.7rem;
+      color: rgba(200, 235, 210, 0.6);
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+    .progress-status .status-text { color: rgba(200, 235, 210, 0.8); font-weight: 600; }
+    .progress-status .percent { color: #6ad08a; font-weight: 700; }
+
+    .loading-tip-green {
+      margin-top: 1.6rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(80, 200, 130, 0.10);
+      font-size: 0.7rem;
+      color: rgba(200, 235, 210, 0.5);
+      letter-spacing: 0.02em;
+    }
+    .loading-tip-green i { color: #4bb86a; margin-right: 4px; }
+
+    @media (max-width: 640px) {
+      .logo-img { height: 64px; }
+      .loading-box-glass { padding: 2rem 1.5rem 1.8rem; }
+      .loading-title-green { font-size: 1.1rem; }
+      .loading-spinner-green { width: 60px; height: 60px; }
+    }
+  </style>
+</head>
+<body class="page-bg">
+
+  <!-- Particles Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Background Orbs -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none z-0" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- ─── LOADING OVERLAY (green glass) ─── -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-box-glass">
+      <div class="loading-spinner-green">
+        <span class="icon-center"><i class="fas fa-seedling"></i></span>
+      </div>
+      <h2 class="loading-title-green"><span class="highlight">Organic</span> update</h2>
+      <p class="loading-sub">preparing your green download</p>
+      <div class="progress-track-glass">
+        <div class="progress-fill-glass" id="progressFill" style="width: 0%;"></div>
+      </div>
+      <div class="progress-status">
+        <span class="status-text" id="statusText">🌱 initializing</span>
+        <span class="percent" id="percentText">0%</span>
+      </div>
+      <div class="loading-tip-green"><i class="fas fa-leaf"></i> 100% organic · green glass</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- SECTION 1 — HERO -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <section id="hero" class="relative min-h-screen flex flex-col items-center justify-center px-4 py-20 z-10">
+
+    <div class="glass rounded-3xl p-8 md:p-14 max-w-3xl w-full flex flex-col items-center text-center relative overflow-hidden">
+
+      <div class="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-[rgba(163,230,53,0.08)] to-transparent pointer-events-none" aria-hidden="true"></div>
+
+      <!-- Logo -->
+      <div class="hero-fade hero-fade-1 logo-ring mb-8" aria-label="卂𝔪 Ṽ̶เק Logo">
+        <img src="" alt="卂𝔪 Ṽ̶เק Community" class="logo-img" />
+      </div>
+
+      <h1 class="hero-fade hero-fade-2 font-poppins font-bold text-4xl sm:text-5xl md:text-6xl tracking-tight mb-6 leading-tight" style="color:#ffffff;">
+        Welcome to 卂𝔪 Ṽ̶เק Community
+      </h1>
+
+      <p class="hero-fade hero-fade-3 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl" style="color: rgba(242,242,242,0.55);">
+        Join the official platform and stay connected with community updates, announcements, and easy access features.
+      </p>
+
+      <div class="hero-fade hero-fade-4 flex flex-col sm:flex-row items-center gap-4">
+        <a href="https://19yaarwin.com/#/register?invitationCode=58763314385" target="_blank" rel="noopener" class="btn-primary" data-testid="link-register">
+          <span class="relative z-10">Register Now</span>
+          <span class="shimmer-layer" aria-hidden="true"></span>
+        </a>
+
+        <!-- GREEN GLASS ORGANIC BUTTON (APK download) -->
+        <a href="#" class="btn-green-glass" id="downloadBtn" download>
+          <i class="fas fa-leaf"></i>
+          <span>APK Download</span>
+          <i class="fas fa-cloud-download-alt" style="font-size:1rem; opacity:0.7;"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero-fade hero-fade-5 absolute bottom-8 flex flex-col items-center gap-2" style="color: rgba(242,242,242,0.4);">
+      <span class="text-xs tracking-widest uppercase font-medium">Scroll</span>
+      <svg class="icon animate-[bounceArrow_2s_ease-in-out_infinite] w-6 h-6" style="color:#a3e635" viewBox="0 0 24 24" aria-hidden="true">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- SECTION 2 — COMMUNITY CHANNEL -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <section id="community" class="relative py-24 px-4 z-10">
+    <div class="max-w-4xl mx-auto">
+      <div class="glass-card community-card reveal rounded-2xl p-8 md:p-14 text-center relative overflow-hidden" style="border: 1px solid rgba(255,255,255,0.06);">
+        <div class="absolute inset-0 bg-gradient-to-br from-[rgba(163,230,53,0.05)] to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" aria-hidden="true"></div>
+
+        <h2 class="font-poppins font-bold text-3xl md:text-4xl mb-5 relative z-10">Join Official Community Channel</h2>
+        <p class="text-lg leading-relaxed mb-10 max-w-xl mx-auto relative z-10" style="color: rgba(242,242,242,0.55);">
+          Stay updated with important announcements, access information, and community support updates.
+        </p>
+        <a href="https://t.me/predction_AM" target="_blank" rel="noopener" class="btn-outline relative z-10" data-testid="link-join-community">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true" style="flex-shrink:0;">
+            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+          </svg>
+          Join Community
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- SECTION 3 — FEATURES GRID -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <section id="features" class="relative py-24 px-4 z-10" style="background: rgba(0,0,0,0.2);">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="glass-card feature-card reveal reveal-delay-1" data-testid="card-easy-registration">
+          <div class="card-glow bg-gradient-to-br from-[rgba(163,230,53,0.1)] to-transparent" aria-hidden="true"></div>
+          <div class="icon-ring relative z-10" style="background: rgba(163,230,53,0.1);">
+            <svg class="icon w-7 h-7" style="color:#a3e635" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <polyline points="16 11 18 13 22 9"></polyline>
+            </svg>
+          </div>
+          <h3 class="font-poppins font-bold text-xl mb-3 relative z-10">Easy Registration</h3>
+          <p class="relative z-10" style="color: rgba(242,242,242,0.55);">Simple and smooth platform access experience.</p>
+        </div>
+
+        <div class="glass-card feature-card reveal reveal-delay-2" data-testid="card-mobile-friendly">
+          <div class="card-glow bg-gradient-to-br from-[rgba(45,212,191,0.1)] to-transparent" aria-hidden="true"></div>
+          <div class="icon-ring relative z-10" style="background: rgba(45,212,191,0.1);">
+            <svg class="icon w-7 h-7" style="color:#2dd4bf" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+          </div>
+          <h3 class="font-poppins font-bold text-xl mb-3 relative z-10">Mobile Friendly Experience</h3>
+          <p class="relative z-10" style="color: rgba(242,242,242,0.55);">Optimized for all devices and screen sizes.</p>
+        </div>
+
+        <div class="glass-card feature-card reveal reveal-delay-3" data-testid="card-community-support">
+          <div class="card-glow bg-gradient-to-br from-[rgba(245,158,11,0.1)] to-transparent" aria-hidden="true"></div>
+          <div class="icon-ring relative z-10" style="background: rgba(245,158,11,0.1);">
+            <svg class="icon w-7 h-7" style="color:#f59e0b" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 class="font-poppins font-bold text-xl mb-3 relative z-10">Community Support</h3>
+          <p class="relative z-10" style="color: rgba(242,242,242,0.55);">Stay connected with important updates and announcements.</p>
+        </div>
+
+        <div class="glass-card feature-card reveal reveal-delay-4" data-testid="card-fast-access">
+          <div class="card-glow bg-gradient-to-br from-[rgba(236,72,153,0.1)] to-transparent" aria-hidden="true"></div>
+          <div class="icon-ring relative z-10" style="background: rgba(236,72,153,0.1);">
+            <svg class="icon w-7 h-7" style="color:#ec4899" viewBox="0 0 24 24" aria-hidden="true">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <h3 class="font-poppins font-bold text-xl mb-3 relative z-10">Fast &amp; Simple Access</h3>
+          <p class="relative z-10" style="color: rgba(242,242,242,0.55);">Quick navigation and seamless usability.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- SECTION 4 — TRUST -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <section id="trust" class="relative py-32 px-4 z-10 overflow-hidden">
+    <div class="trust-orb" aria-hidden="true"></div>
+    <div class="max-w-3xl mx-auto text-center reveal">
+      <h2 class="font-poppins font-bold text-3xl sm:text-4xl md:text-5xl mb-7 leading-tight">Simple &amp; Secure Access</h2>
+      <p class="text-xl leading-relaxed" style="color: rgba(242,242,242,0.55);">
+        Designed for users who want a smooth registration experience and easy access to official community updates and platform information.
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- SECTION 5 — FOOTER -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <footer id="footer" class="relative z-10 pt-12 pb-8 px-4" style="background: rgba(10,12,16,0.85); backdrop-filter: blur(12px);">
+    <div class="footer-glow-line" aria-hidden="true"></div>
+    <div class="pt-12 max-w-6xl mx-auto flex flex-col items-center gap-6">
+
+      <nav class="flex flex-wrap justify-center gap-6 text-sm font-medium" aria-label="Footer Navigation">
+        <a href="#" class="transition-colors hover:text-white" style="color: rgba(242,242,242,0.5);" data-testid="link-privacy-policy">Privacy Policy</a>
+        <a href="#" class="transition-colors hover:text-white" style="color: rgba(242,242,242,0.5);" data-testid="link-terms">Terms &amp; Conditions</a>
+        <a href="#" class="transition-colors hover:text-white" style="color: rgba(242,242,242,0.5);" data-testid="link-contact">Contact Us</a>
+      </nav>
+
+      <p class="text-center max-w-3xl text-xs leading-relaxed" style="color: rgba(242,242,242,0.35);">
+        This website is provided for informational and community access purposes only. No guarantees, promises of earnings, profits, rewards, financial returns, or performance outcomes are made. Users are responsible for complying with applicable local laws and regulations.
+      </p>
+
+      <div class="flex items-center gap-2 text-sm" style="color: rgba(242,242,242,0.5);">
+        <span>Ads Managed &amp; Landing Page Creation By</span>
+        <a href="https://t.me/predction_AM" target="_blank" rel="noopener" class="font-semibold hover:underline" style="color:#a3e635;" data-testid="link-adsrahu">Adsrahu</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <!-- VANILLA JS — Particles + Scroll Reveals + Loading Overlay -->
+  <!-- ════════════════════════════════════════════════════════════ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+  <script>
+    (function() {
+      // ─── Floating Particles ───
+      var canvas = document.getElementById('particles-canvas');
+      var ctx = canvas.getContext('2d');
+      var particles = [];
+      var COUNT = 55;
+
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      for (var i = 0; i < COUNT; i++) {
+        particles.push({
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
+          r: Math.random() * 1.8 + 0.4,
+          speedX: (Math.random() - 0.5) * 0.4,
+          speedY: -(Math.random() * 0.5 + 0.15),
+          opacity: Math.random() * 0.35 + 0.05,
+          life: Math.random(),
+          maxLife: Math.random() * 0.5 + 0.5,
+        });
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (var i = 0; i < particles.length; i++) {
+          var p = particles[i];
+          p.life += 0.003;
+          if (p.life > p.maxLife) {
+            p.life = 0;
+            p.x = Math.random() * canvas.width;
+            p.y = canvas.height + 10;
+            p.opacity = Math.random() * 0.35 + 0.05;
+          }
+          p.x += p.speedX;
+          p.y += p.speedY;
+          var fade = Math.sin((p.life / p.maxLife) * Math.PI);
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(255,255,255,' + (p.opacity * fade) + ')';
+          ctx.fill();
+        }
+        requestAnimationFrame(draw);
+      }
+      draw();
+
+      // ─── Hero fade-in ───
+      var delays = [0, 150, 300, 500, 900];
+      var heroEls = document.querySelectorAll('.hero-fade');
+      heroEls.forEach(function(el, i) {
+        setTimeout(function() {
+          el.classList.add('hero-visible');
+        }, delays[i] || i * 150);
+      });
+
+      // ─── Scroll Reveal ───
+      var revealEls = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+        revealEls.forEach(function(el) { obs.observe(el); });
+      } else {
+        revealEls.forEach(function(el) { el.classList.add('visible'); });
+      }
+
+      // ─── Feature card hover glow ───
+      var glowColors = ['rgba(163,230,53,0.35)', 'rgba(45,212,191,0.35)', 'rgba(245,158,11,0.35)', 'rgba(236,72,153,0.35)'];
+      document.querySelectorAll('.feature-card').forEach(function(card, i) {
+        var ring = card.querySelector('.icon-ring');
+        card.addEventListener('mouseenter', function() {
+          if (ring) ring.style.boxShadow = '0 0 18px ' + glowColors[i % glowColors.length];
+        });
+        card.addEventListener('mouseleave', function() {
+          if (ring) ring.style.boxShadow = '';
+        });
+      });
+
+      // ─── LOADING OVERLAY (green glass) ───
+      var overlay = document.getElementById('loadingOverlay');
+      var progressFill = document.getElementById('progressFill');
+      var statusText = document.getElementById('statusText');
+      var percentText = document.getElementById('percentText');
+      var downloadBtn = document.getElementById('downloadBtn');
+
+      var steps = [
+        { progress: 8, status: '🌱 Sprouting seeds' },
+        { progress: 22, status: '🌿 Growing leaves' },
+        { progress: 38, status: '💧 Nourishing roots' },
+        { progress: 52, status: '☀️ Photosynthesis' },
+        { progress: 68, status: '🌳 Strengthening stem' },
+        { progress: 82, status: '🍃 Polishing petals' },
+        { progress: 94, status: '🌸 Almost blooming' },
+        { progress: 100, status: '✨ Fully organic — ready!' }
+      ];
+
+      var currentStep = 0;
+      var interval = null;
+
+      function simulateUpdate() {
+        overlay.classList.add('active');
+        progressFill.style.width = '0%';
+        percentText.textContent = '0%';
+        statusText.textContent = '🌱 initializing';
+        currentStep = 0;
+
+        if (interval) clearInterval(interval);
+
+        interval = setInterval(function() {
+          if (currentStep < steps.length) {
+            var step = steps[currentStep];
+            progressFill.style.width = step.progress + '%';
+            percentText.textContent = step.progress + '%';
+            statusText.textContent = step.status;
+            currentStep++;
+
+            if (step.progress === 100) {
+              clearInterval(interval);
+              interval = null;
+              setTimeout(function() {
+                var link = document.createElement('a');
+                link.href = 'Number tools AMVIP_2.0 (2).apk';
+                link.download = 'Number tools AMVIP_2.0 (2).apk';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                setTimeout(function() {
+                  overlay.classList.remove('active');
+                  currentStep = 0;
+                  progressFill.style.width = '0%';
+                  percentText.textContent = '0%';
+                  statusText.textContent = '🌱 initializing';
+                }, 500);
+              }, 400);
+            }
+          } else {
+            clearInterval(interval);
+            interval = null;
+            currentStep = 0;
+          }
+        }, 480);
+      }
+
+      if (downloadBtn) {
+        downloadBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          simulateUpdate();
+        });
+      }
+
+      // ─── Card entrance ───
+      var card = document.querySelector('.glass');
+      if (card) {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px) scale(0.98)';
+        card.style.transition = 'opacity 0.7s ease, transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        requestAnimationFrame(function() {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0) scale(1)';
+        });
+      }
+
+      overlay.classList.remove('active');
+    })();
+  </script>
+
+</body>
+</html>
